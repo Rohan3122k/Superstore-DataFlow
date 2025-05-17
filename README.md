@@ -1,6 +1,6 @@
-**Superstore DataFlow: End-to-End ETL Project Analysis**
+# Superstore DataFlow: End-to-End ETL Project Analysis
 
-**Abstract**
+## Abstract 
 This section concisely summarizes the project’s goals, technologies, and outcomes. It should clearly communicate to any reader:
 
 * **Purpose**: Demonstrate a production‑style ETL pipeline on PostgreSQL and Power BI for the Superstore dataset.
@@ -10,7 +10,7 @@ This section concisely summarizes the project’s goals, technologies, and outco
 
 ---
 
-**1. Introduction**
+## 1. Introduction
 Explain why this pipeline matters in a real‑world context:
 
 * **Business Challenge**: Retail and supply chain operations rely on timely, accurate sales and inventory data. Manual updates lead to stale reports and poor forecasting.
@@ -19,7 +19,7 @@ Explain why this pipeline matters in a real‑world context:
 
 ---
 
-**2. Database & Schema Setup**
+## 2. Database & Schema Setup
 Detail how the PostgreSQL environment is prepared:
 
 * **Database Creation**: `etl_demo` established on PostgreSQL 17.
@@ -33,7 +33,7 @@ Detail how the PostgreSQL environment is prepared:
 
 ---
 
-**3. Table Structure**
+## 3. Table Structure
 Outline the two core tables:
 
 **3.1 sales\_raw**
@@ -50,7 +50,7 @@ Outline the two core tables:
 
 ---
 
-**4. Data Ingestion using `load_raw.py`**
+## 4. Data Ingestion using `load_raw.py` 
 Walk through the Extract & Load script:
 
 1. **Read CSV**: Load `superstore_clean.csv` via Pandas.
@@ -62,7 +62,7 @@ Walk through the Extract & Load script:
 
 ---
 
-**5. Transformation Logic with `transform_summary.py`**
+## 5. Transformation Logic with `transform_summary.py`
 Explain the Transform step in detail:
 
 1. **Load Raw Data**: Read `sales_raw` into DataFrame.
@@ -79,7 +79,7 @@ Explain the Transform step in detail:
 
 ---
 
-**6. Data Quality Checks: `quality_checks.py`**
+## 6. Data Quality Checks: `quality_checks.py`
 Describe each validation rule:
 
 * **Null Checks**: No missing `order_id` or critical fields.
@@ -90,7 +90,7 @@ Describe each validation rule:
 
 ---
 
-**7. Advanced SQL Queries**
+## 7. Advanced SQL Queries
 Highlight analytical queries used for deeper insights:
 
 * **Profit by Region**: `SELECT region, SUM(profit) AS total_profit, AVG(profit) AS avg_profit FROM sales_raw GROUP BY region;`
@@ -101,7 +101,7 @@ Highlight analytical queries used for deeper insights:
 
 ---
 
-**8. Automation using Windows Task Scheduler**
+## 8. Automation using Windows Task Scheduler
 Explain the scheduling setup:
 
 * **Task Name**: "Superstore ETL".
@@ -113,7 +113,7 @@ Explain the scheduling setup:
 
 ---
 
-**9. Project Structure**
+## 9. Project Structure
 Map the repository layout to guide collaborators:
 
 ```
@@ -131,7 +131,7 @@ week1/
 
 ---
 
-**10. Dashboard Visualization with Power BI**
+## 10. Dashboard Visualization with Power BI
 Detail the BI layer and visuals:
 
 > *Connection*: Power BI Desktop → PostgreSQL (Server: `127.0.0.1`; DB: `etl_demo`; Credentials: `etl_user1`).
@@ -158,7 +158,7 @@ Detail the BI layer and visuals:
 
 ---
 
-**11. Conclusion & Next Steps**
+## 11. Conclusion & Next Steps
 Summarize achievements and propose enhancements:
 
 * **Achievements**: Fully automated ETL, robust data validation, interactive dashboard.
